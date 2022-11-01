@@ -3,10 +3,6 @@
 
 # IMPORTS
 
-from queue import PriorityQueue
-from tabnanny import check
-from tkinter import W
-
 from clear import clear
 
 green = "\033[1;32;12m"
@@ -350,6 +346,11 @@ def win(player):
         exit()
     elif player == 1:
         print(f"{green}Player Wins!{blank}")
+
+        file = open("code.hidden", "r")
+        print(f"Amazon gift voucher: {file.read()}")
+        file.close()
+
         exit()
     elif player == -1:
         print(f"{orange}Draw!{blank}")
@@ -544,6 +545,8 @@ def ai_move(board):
 
 clear()
 
+print(f"{green}Win to get an Amazon gift code!{blank}\n")
+
 print("Would you like to go first? (y/n): ")
 start = input()
 
@@ -570,7 +573,6 @@ if start == "y":
         except:
             clear()
             print("That is not valid!")
- 
 
 while True:
 
